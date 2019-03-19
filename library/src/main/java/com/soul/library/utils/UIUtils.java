@@ -108,9 +108,7 @@ public class UIUtils {
      * 得到主线程id
      */
     public static long getMainThreadId() {
-        if (sThreadId == 0) {
-            throw new NullPointerException("u should init first");
-        }
+
         return sThreadId;
     }
 

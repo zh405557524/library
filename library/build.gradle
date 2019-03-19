@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 28
 
@@ -23,7 +23,15 @@ android {
     }
 
 }
-
+publish {
+    repoName = 'test'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = '***'//bintray.com的用户名
+    groupId = 'com.test'//jcenter上的路径
+    artifactId = 'testlibrary'//项目名称
+    publishVersion = '1.0.1'//版本号
+    desc = 'for test'//描述
+//    website = "https://github.com/novoda/${rootProject.name}"//github 地址
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
